@@ -4,11 +4,13 @@
 			<div class="flex h-screen w-screen flex-col justify-center bg-white">
 				<div class="flex flex-col mx-auto gap-3 items-center">
 					<FrappeHRLogo class="h-8 w-8" />
-					<div class="text-3xl font-semibold text-gray-900 text-center">Login to CampX HR</div>
+					<div class="text-3xl font-semibold text-gray-900 text-center">
+						Welcome Employee Self Service App
+					</div>
 				</div>
 
 				<div class="mx-auto mt-10 w-full px-8 sm:w-96">
-					<form class="flex flex-col space-y-4" @submit.prevent="submit">
+					<!-- <form class="flex flex-col space-y-4" @submit.prevent="submit">
 						<Input
 							label="Email"
 							placeholder="johndoe@mail.com"
@@ -31,26 +33,27 @@
 						>
 							Login
 						</Button>
-					</form>
+					</form> -->
 
 					<template v-if="authProviders.data?.length">
-						<div class="text-center text-sm text-gray-600 my-4">or</div>
+						<!-- <div class="text-center text-sm text-gray-600 my-4">or</div> -->
 						<div class="space-y-4">
+							
 							<a
 								v-for="provider in authProviders.data"
 								:key="provider.name"
 								class="flex items-center justify-center gap-2 transition-colors focus:outline-none text-gray-800 bg-gray-100 hover:bg-gray-200 active:bg-gray-300 focus-visible:ring focus-visible:ring-gray-400 h-7 text-base p-2 rounded"
 								:href="provider.auth_url"
 							>
-								<img class="h-4 w-4" :src="provider.icon" :alt="provider.provider_name" />
-								<span>Login with {{ provider.provider_name }}</span>
+								<!-- <img class="h-4 w-4" :src="provider.icon" :alt="provider.provider_name" /> -->
+								<span>Continue </span>
 							</a>
 						</div>
 					</template>
 				</div>
 			</div>
 
-			<Dialog v-model="resetPassword.showDialog">
+			<!-- <Dialog v-model="resetPassword.showDialog">
 				<template #body-title>
 					<h2 class="text-lg font-bold">Reset Password</h2>
 				</template>
@@ -66,9 +69,9 @@
 						Go to Reset Password page
 					</a>
 				</template>
-			</Dialog>
+			</Dialog> -->
 
-			<Dialog v-model="otp.showDialog">
+			<!-- <Dialog v-model="otp.showDialog">
 				<template #body-title>
 					<h2 class="text-lg font-bold">OTP Verification</h2>
 				</template>
@@ -95,7 +98,7 @@
 						</Button>
 					</form>
 				</template>
-			</Dialog>
+			</Dialog> -->
 		</ion-content>
 	</ion-page>
 </template>
